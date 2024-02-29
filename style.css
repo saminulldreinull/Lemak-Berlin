@@ -14,9 +14,7 @@ body {
 }
 
 /* Body-Stile */
-body {
-  position: relative;
-}
+
 .site-wrapper {
   overflow-x: hidden; /* Verhindert horizontales Scrollen innerhalb dieses Containers */
   width: 100%; /* Stellt sicher, dass der Container die gesamte Breite der Seite einnimmt */
@@ -39,316 +37,108 @@ body {
 
 /*------header------*/
 
-.header {
+header {
   width: 100%;
- 
+  background-color: rgb(0, 184, 225);
   height: 8.5vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  background-color: rgb(243,243,243);
   z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
-.header-fixed {
-  position: fixed;
-}
-.shadow {
-  box-shadow: 0px 0px 8px rgba(0,0,0,.6);
-}
-.header .logo {
- margin-left: 2vh; 
-  font-size: 1.5em;
-  text-decoration: none;
-  color: black;
-}
-  
-
-.header .logo span {
-  font-size: 1.5rem;
-}
-
-
-.header ul{
-  margin-left: 2vh; 
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-
-.header li {
-  margin-right: 20px;
-}
-
-.header li:last-child {
-  margin-right: 0;
-}
-
-.header li a {
-  text-decoration: none;
-  color: black;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-
-
-.header .logo {
-  font-size: 2em;
-  text-decoration: none;
-  color: black;
-}
-
-/* menu */
-
-.header .menu {
-  top: 0;
-  position: sticky;
+.nav-branding {
   width: auto;
-  clear: both;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-  margin-right: 3vh;
-}
-
-/* menu icon */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  position: absolute; /* Geändert von 'float: right;' zu 'position: absolute;' */
-  right: 0; /* Hinzugefügt, um das Icon rechts auszurichten */
-  padding: 28px;
-  padding-left: 5%;
-  -webkit-user-select: none;
-  user-select: none;
-  z-index: 1000; /* Stellen Sie sicher, dass das Menü über anderen Elementen liegt */
-}
-
-.header .menu-icon .navicon {
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: #333;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .navicon:before {
-  top: 5px;
-}
-
-.header .menu-icon .navicon:after {
-  top: -5px;
-}
-
-/* menu btn */
-
-.header .menu-btn {
-  display: none;
-}
-
-.header .menu-btn:checked ~ .menu {
-  max-height: 240px;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-}
-
-
-/* The progress bar (scroll indicator) */
-.progress-bar {
-  position: fixed;
-  height: 0.5vh;
-  background-color: black;
-  width: 0%;
-}
-
-.header {
-  width: 100%;
-  background-color: rgb(0, 184, 225);
-  height: 8.5vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-
-  z-index: 1000;
-}
-
-.headers-list {
-  color: white  ;
-}
-
-.header-fixed {
-  position: fixed;
-}
-.shadow {
-  background-color: rgb(0, 184, 225);
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
-}
-
-.header .logo {
+  font-size: clamp(2rem, 1.5vw, 1.25rem);
   margin-left: 2vh;
-  font-size: 1.5em;
-  text-decoration: none;
-}
-
-.header ul {
-  margin-left: 2vh;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.header li {
-  margin-right: 20px;
-}
-
-.header li:last-child {
-  margin-right: 0;
-}
-
-.header li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-
-
-.header .logo {
-  font-size: 2em;
+  padding-top: 2vh;
   text-decoration: none;
   color: white;
 }
 
-/* menu */
-
-.header .menu {
-  top: 0;
-  position: sticky;
-  width: auto;
-  clear: both;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-  margin-right: 3vh;
+header .nav-branding span {
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
 }
 
-/* menu icon */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  position: absolute; /* Geändert von 'float: right;' zu 'position: absolute;' */
-  right: 0; /* Hinzugefügt, um das Icon rechts auszurichten */
-  padding: 28px;
-  padding-left: 5%;
-  -webkit-user-select: none;
-  user-select: none;
-  z-index: 1000; /* Stellen Sie sicher, dass das Menü über anderen Elementen liegt */
+header li {
+  list-style: none;
 }
 
-.header .menu-icon .navicon {
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 18px;
+header li a {
+  color: white;
+  text-decoration: none;
 }
 
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: #333;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
+.navbar {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5%;
+  padding-left: 5vh;
 }
 
-.header .menu-icon .navicon:before {
-  top: 5px;
+.nav-menu {
+  display: flex;
+  gap: 3.75rem;
+  padding-right: 4vh;
 }
 
-.header .menu-icon .navicon:after {
-  top: -5px;
+.nav-link {
+  transition: 0.7s ease;
 }
 
-/* menu btn */
+.nav-link:hover {
+  color: black;
+}
 
-.header .menu-btn {
+.hamburger {
   display: none;
+  cursor: pointer;
 }
 
-.header .menu-btn:checked ~ .menu {
-  max-height: 240px;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-}
-
-/* 48em = 768px */
-
-@media (min-width: 48em) {
-  .header li {
-    float: left;
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
 
-  .header li a {
-    padding: 20px 30px;
+  .hamburger .active .bar:nth-child(2) {
+    opacity: 0;
   }
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
+
+  .hamburger .active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
   }
-  .header .menu-icon {
-    display: none;
+
+  .hamburger .active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu .active {
+    left: 0;
   }
 }
 
@@ -446,10 +236,6 @@ body {
   color: rgb(0, 184, 225);
 }
 
-.about-us {
-  margin-top: 0.5rem;
-}
-
 .text-container,
 .iframe-container {
   flex: 1; /* Beide Container nehmen den gleichen Platz ein */
@@ -505,7 +291,7 @@ body {
 }
 
 .gewerke {
-  overflow:hidden;
+  overflow: hidden;
   background-color: white;
   border-radius: 5px;
   width: 25.6%; /* Beibehalten der Breite */
@@ -531,9 +317,10 @@ body {
 }
 
 .about-us {
+  margin-top: 0.5rem;
   font-size: clamp(0.75rem, 1.5vw, 1rem);
   color: rgb(138, 138, 138);
-  line-height: clamp(1rem,1.8vw,1.5rem);
+  line-height: clamp(1rem, 1.8vw, 1.5rem);
   /* Keine zusätzlichen Stile benötigt, da die Positionierung durch den .gewerke-Container gesteuert wird */
 }
 /* Wenden Sie margin-top nur auf die ersten drei .gewerke divs an */
@@ -573,7 +360,7 @@ body {
     border-top: none;
   }
 
-  .picture-container{
+  .picture-container {
     padding-top: 0;
     margin-bottom: 0;
   }
