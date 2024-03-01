@@ -30,3 +30,12 @@ function showDivs(n, containerId) {
   slides[n - 1].style.display = "block";
   container.dataset.slideIndex = n; // Aktualisiert den Index im data-slide-index Attribut
 }
+
+window.addEventListener("scroll", (event) => {
+  let scroll = this.scrollY;
+  if (scroll > 10) {
+    document.querySelector(".header").classList.add("shadow");
+  } else {
+    document.querySelector(".header").classList.remove("shadow");
+  }
+});
