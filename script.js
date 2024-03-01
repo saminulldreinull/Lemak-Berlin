@@ -1,5 +1,5 @@
 
-  initSlideIndex('picture-container1');
+initSlideIndex('picture-container1');
   initSlideIndex('picture-container2');
 
 
