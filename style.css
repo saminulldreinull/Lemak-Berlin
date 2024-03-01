@@ -10,14 +10,6 @@ body {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-weight: 200;
-}
-
-/* Body-Stile */
-
-.site-wrapper {
-  overflow-x: hidden; /* Verhindert horizontales Scrollen innerhalb dieses Containers */
-  width: 100%; /* Stellt sicher, dass der Container die gesamte Breite der Seite einnimmt */
 }
 
 /* The progress container (grey background) */
@@ -29,7 +21,6 @@ body {
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-  position: fixed;
   height: 0.5vh;
   background-color: black;
   width: 0%;
@@ -37,11 +28,18 @@ body {
 
 /*------header------*/
 
+.shadow {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+}
+
 header {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
   width: 100%;
   background-color: rgb(0, 184, 225);
   height: 8.5vh;
-  z-index: 1000;
+  z-index: 2000;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -50,7 +48,7 @@ header {
 .nav-branding {
   width: auto;
   font-size: clamp(2rem, 1.5vw, 1.25rem);
-  margin-left: 2vh;
+  margin-left: 2%;
   padding-top: 2vh;
   text-decoration: none;
   color: white;
@@ -226,14 +224,23 @@ header li a {
 }
 
 .about-container h2 {
-  font-size: 3rem;
+  font-size: clamp(1rem, 3vw, 3rem);
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 .about-container h3 {
+  font-size: clamp(0.6rem, 1.3vw, 2rem);
   margin-bottom: 1rem;
   color: rgb(0, 184, 225);
+}
+
+.about-us {
+  margin-top: 0.5rem;
+  font-size: clamp(0.95rem, 1.2vw, 2rem);
+  color: rgb(138, 138, 138);
+  line-height: clamp(1rem, 1, 1.5rem);
+  /* Keine zusätzlichen Stile benötigt, da die Positionierung durch den .gewerke-Container gesteuert wird */
 }
 
 .text-container,
@@ -255,9 +262,20 @@ header li a {
   border: none; /* Entfernt den Standardrahmen um iframes */
 }
 
+@media (max-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  iframe {
+    margin-bottom: 10vh;
+  }
+}
+
 .service-introduction {
-  width: 100%;
-  height: 60vh;
+  height: 50vh;
   color: white;
   background-color: rgb(0, 184, 225);
   display: flex;
@@ -266,20 +284,33 @@ header li a {
 }
 
 .service-introduction h2 {
-  font-size: 3.5rem;
+  font-size: clamp(3rem, 5vw, 4rem);
   margin: 0; /* Entfernt den Standard-Außenabstand von h2 */
 }
 
 #first-intro {
-  margin-top: 15vh;
+  margin-top: 8vh;
+  font-size: clamp(0.8rem, 1.2vw, 2rem);
 }
 
 .service-introduction .service-introduction-text {
   width: 40%;
   display: block; /* Standardverhalten, passt die Höhe dem Inhalt an */
   margin: 0; /* Entfernt den Standard-Außenabstand */
+  font-size: clamp(1rem, 1.1vw, 1.5rem);
 }
 
+@media (max-width: 768px) {
+  .service-introduction {
+    padding-left: 5%;
+    height: auto;
+  }
+
+  .service-introduction .service-introduction-text {
+    width: 100%;
+    padding-bottom: 5vh;
+  }
+}
 .gewerke-container {
   display: flex;
   flex-wrap: wrap;
@@ -287,6 +318,7 @@ header li a {
   background-color: rgb(243, 243, 243);
   padding: 2vh; /* Fügt ein wenig Innenabstand hinzu */
   margin: 0;
+  padding-top: 8vh;
   justify-content: center;
 }
 
@@ -316,25 +348,34 @@ header li a {
   color: white;
 }
 
-.about-us {
-  margin-top: 0.5rem;
-  font-size: clamp(0.75rem, 1.5vw, 1rem);
-  color: rgb(138, 138, 138);
-  line-height: clamp(1rem, 1.8vw, 1.5rem);
-  /* Keine zusätzlichen Stile benötigt, da die Positionierung durch den .gewerke-Container gesteuert wird */
-}
-/* Wenden Sie margin-top nur auf die ersten drei .gewerke divs an */
 .gewerke-container .gewerke:nth-child(-n + 3) {
   margin-top: 10vh;
 }
 
 .heading {
-  font-size: clamp(1.5rem, 2vw, 1rem);
+  font-size: clamp(1.5rem, 1vh, 1rem);
 }
 
 .gewerke-container .gewerke:nth-child(3),
 .gewerke-container .gewerke:nth-child(5) {
   height: 40vh;
+}
+
+@media (max-width: 768px) {
+  .gewerke {
+    width: 100%;
+    margin-bottom: 0;
+    height: 35vh;
+    justify-content: space-around;
+  }
+
+  .gewerke-container {
+    gap: 4vh;
+  }
+
+  .gewerke-container .gewerke:nth-child(-n + 3) {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -345,8 +386,10 @@ header li a {
     width: 100%;
     margin: 0;
     padding: 0;
-    gap: 0;
+    gap: 3.5vh;
     justify-content: flex-start;
+    padding-top: 3.5vh;
+    padding-bottom: 7vh;
   }
 
   .picture-container,
@@ -395,8 +438,7 @@ header li a {
   line-height: 50px;
 }
 
-/*-------responsive---------*/
-
+/* Contact */
 #contact {
   display: flex;
   flex-direction: column;
@@ -408,6 +450,7 @@ header li a {
   padding-bottom: 4vh;
   font-size: 1rem;
   text-align: center;
+  background-color: rgb(243, 243, 243);
 }
 
 #contact h4 {
@@ -420,30 +463,61 @@ header li a {
   flex-direction: column;
   width: 100%;
   width: auto;
-  padding-left: 8.8rem;
 }
 
 .contact-information a {
   color: black;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .contact-information p {
+  white-space: nowrap;
+  display: block;
   align-self: flex-start;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 #contact h6 {
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 1.8vw, 1.125rem);
   margin-bottom: 0;
   color: rgb(0, 184, 225);
 }
-.contact-text,
+
 #contact h4 {
+  margin-bottom: 0;
+  font-size: clamp(1rem, 3vw, 3rem);
   width: 80%;
 }
 
+.cio {
+  align-self: center;
+}
 .contact-text {
-  line-height: 1.875rem;
+  width: 80%;
+  line-height: 3vh;
+  font-size: clamp(0.8rem, 1.1vw, 1.4rem);
+}
+
+@media (max-width: 768px) {
+  #contact {
+    height: auto;
+  }
+
+  .cio {
+    width: auto;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .picture-container {
+    background-color: red;
+  }
+  .contact-information {
+    padding-left: 0;
+  }
 }
 
 .contact-me {
@@ -451,7 +525,6 @@ header li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(243, 243, 243);
 }
 
 .contact-question {
@@ -459,19 +532,19 @@ header li a {
 }
 
 .contact-question p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1vw, 1.5rem);
   margin-top: 0.5rem;
   font-weight: 600;
 }
 .contact-question h3 {
-  font-size: 2.8rem;
+  font-size: clamp(1.3rem, 3vw, 3.5rem);
   margin-bottom: 0;
   color: rgb(0, 184, 225);
 }
 
 .contact-tel {
   padding-right: 15vh;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
   font-weight: 800;
   text-decoration: none;
   color: black;
@@ -487,13 +560,29 @@ header li a {
   margin-bottom: 0;
 }
 
+@media (max-width: 768px) {
+  .contact-me {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-block: 5vh;
+  }
+  .contact-question {
+    padding-left: 2vh;
+  }
+
+  .question-package {
+    justify-content: flex-start;
+    margin-left: 2vh;
+  }
+}
 footer {
   background-color: rgb(0, 184, 225);
   color: white;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 40vh;
+  height: 30vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -503,17 +592,19 @@ footer {
 
 .footers-content {
   margin-top: 4vh;
-  margin-bottom: 8vh;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  line-height: 1px;
-  font-size: 1.125rem;
+  line-height: 0.5rem;
+  font-size: clamp(0.8rem, 3vw, 1.125rem);
 }
 
+.footers-content-content {
+  line-height: 0.5rem;
+}
 footer h4 {
-  align-self: start;
-  margin-bottom: 0.8rem;
-  font-size: 1.475rem;
+  margin-bottom: 0.1rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 footer p {
@@ -523,4 +614,31 @@ footer p {
 footer a {
   text-decoration: none;
   color: white;
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4vh; /* Fügt einen unteren Padding zum Footer hinzu */
+  }
+
+  .footers-content {
+    width: 100%;
+    margin-top: 1vh; /* Reduziere den oberen Abstand, um die Elemente näher zusammenzubringen */
+    margin-bottom: 1vh; /* Halte den unteren Abstand klein, um die Elemente eng zu halten */
+    align-items: center;
+
+  }
+  
+  .footers-content-content {
+    width: 100%;
+    line-height: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }
