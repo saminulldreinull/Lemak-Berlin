@@ -6,8 +6,8 @@ body {
   margin: 0;
   font-weight: 200;
   box-sizing: border-box;
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "DM Sans", sans-serif !important;
+  font-optical-sizing: auto !important;
   font-style: normal;
 }
 
@@ -34,7 +34,7 @@ body {
   box-shadow: 0 14px 12px -6px grey;
 }
 
-header {
+header.header {
   top: 0;
   position: -webkit-sticky;
   position: sticky;
@@ -47,7 +47,7 @@ header {
   justify-content: space-between;
 }
 
-.nav-branding {
+header#heda a.nav-branding {
   width: auto;
   font-size: clamp(2rem, 1.5vw, 1.25rem);
   margin-left: 2%;
@@ -56,38 +56,37 @@ header {
   color: white;
 }
 
-header .nav-branding span {
+header#heda a.nav-branding span {
   font-size: clamp(0.75rem, 1.5vw, 1rem);
 }
 
-header li {
+header.header > nav.navbar > ul.nav-menu > li.nav-item {
   list-style: none;
 }
 
-header li a {
+header.header .nav-menu .nav-item .nav-link {
   color: white;
   text-decoration: none;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
+html body header#heda > nav.navbar {
+  display: flex!important;
+  align-items: center!important;
   margin-top: 0.5%;
   padding-left: 5vh;
 }
 
-.nav-menu {
+header#heda nav.navbar ul.nav-menu {
   display: flex;
   gap: 3.75rem;
   padding-right: 4vh;
 }
 
-.nav-link {
-  transition: 0.7s ease;
-}
 
-.nav-link:hover {
+
+header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
   color: black;
+  transition: 0.7s ease;
 }
 
 .hamburger {
@@ -145,13 +144,14 @@ header li a {
 /*----header-end----*/
 
 .div1 {
-  margin-bottom: 2.5vh;
-  display: flex;
-  background-color: rgb(243, 243, 243);
-  flex-wrap: wrap;
-  gap: 2%; /* Vertikaler und horizontaler Abstand zwischen den Elementen */
-  justify-content: space-between; /* Sorgt für gleichmäßigen Abstand zwischen den Elementen und zum Rand */
+  background-color: rgb(243,243,243);
   height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 2%;
+  margin-top: 2%;
+  margin-bottom: 2.5vh;
   padding-left: 2%;
   padding-right: 2%;
 }
@@ -160,35 +160,36 @@ header li a {
   padding-top: 5vh;
   display: flex;
   flex-direction: column;
-  margin-top: 0;
-  margin-bottom: 3vh;
-  flex: 1;
+  height: 55%;
+  width: 48%;
   min-width: 16px + 1vw;
-  height: 80%;
-  overflow: hidden; /* Verhindert das "Auslaufen" von inneren Inhalten außerhalb der abgerundeten Ecken */
+  align-items: stretch;
 }
 
-.img-container {
+.carousel-item {
+  height: 70vh;
+}
+
+.carousel-inner {
+  display: flex;
   flex-grow: 1;
-  overflow: hidden; /* Diese Zeile hinzugefügt */
-  background-color: #fff; /* Hintergrundfarbe, passend zu Ihren Bildern oder der Website */
+
 }
 
-.img-container img {
-  display: block;
-  background-size: cover;
-  object-fit: cover;
+.carousel-item img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center center;
   transition: transform 0.8s ease-in-out;
 }
 
+
+
 .footer {
-  background-color: white;
-  flex-shrink: 0; /* Verhindert, dass der Footer schrumpft */
-  height: 13%; /* Höhe des Footers, anpassbar nach Bedarf */
-  display: flex; /* Erlaubt die Zentrierung von Inhalten im Footer */
-  align-items: center; /* Zentriert den Inhalt vertikal */
+  height: 20%;
+  background-color: white!important;
+  flex-shrink: 0;
 }
 
 .footer h3 {
@@ -202,18 +203,70 @@ header li a {
   line-height: 1.2;
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+
+  top: 50%; /* Zentriert die Buttons vertikal */
+  transform: translateY(-50%); /* Verschiebt die Buttons zurück, um eine exakte Zentrierung zu erreichen */
+}
+
+.carousel-control-prev {
+  left: 0; /* Positioniert den 'Vorheriges'-Button am linken Rand */
+}
+
+.carousel-control-next {
+  right: 0; /* Positioniert den 'Nächstes'-Button am rechten Rand */
+}
+
+
 @media (min-width: 1024px) {
-  .img-container img:hover {
+  .carousel-item img:hover {
     transform: scale(1.1);
     cursor: pointer;
     filter: brightness(60%);
     transform-origin: center center;
   }
 
-  .picture-container:hover {
+  .picture-container:hover .footer {
     box-shadow:
       0 10px 20px rgba(0, 0, 0, 0.19),
       0 6px 6px #0000003b;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .div1 {
+      gap: 2vh;
+      margin-left: 0;
+      margin-right: 0;
+      flex-direction: column;
+      gap: 0; /* Kein Abstand zwischen den Karussells */
+  }
+
+  .picture-container {
+      width: 100%; /* Stellt sicher, dass der Container die volle Breite ausnutzt */
+      padding-top: 0; /* Entfernt den oberen Abstand, falls vorhanden */
+      margin-top: 0; /* Entfernt den oberen Rand, falls vorhanden */
+  }
+
+
+  .carousel-item {
+      width: 100%;
+       height:auto !important; 
+  }
+
+  .carousel-item img {
+       width: auto;
+       height: 45vh;
+      max-height: 50vh; 
+   
+  }  
+
+
+  .footer {
+      height: auto; /* Höhe automatisch anpassen */
+      font-size: 3vw; /* Textgröße relativ zur Bildschirmbreite */
   }
 }
 
@@ -315,7 +368,7 @@ header li a {
     padding-bottom: 5vh;
   }
 }
-.gewerke-container {
+div.gewerke-container {
   display: flex;
   flex-wrap: wrap;
   gap: 5vh; /* Reduzierter Abstand zwischen den Elementen */
@@ -326,7 +379,7 @@ header li a {
   justify-content: center;
 }
 
-.gewerke {
+div.gewerke-container div.gewerke {
   overflow: hidden;
   background-color: white;
   border-radius: 5px;
@@ -339,7 +392,7 @@ header li a {
   padding: 0.9375rem 1.5625rem; /* 15px vertikaler und 25px horizontaler Innenabstand */
 }
 
-.gewerke:hover {
+div.gewerke-container div.gewerke:hover {
   color: white;
   background-color: rgb(0, 184, 225);
   cursor: pointer;
@@ -356,7 +409,7 @@ header li a {
   margin-top: 10vh;
 }
 
-.heading {
+div.gewerke-container div.gewerke h4.heading {
   font-size: clamp(1.5rem, 1vh, 1rem);
 }
 
@@ -366,18 +419,18 @@ header li a {
 }
 
 @media (max-width: 768px) {
-  .gewerke {
+  div.gewerke-container div.gewerke {
     width: 100%;
     margin-bottom: 0;
     height: 35vh;
     justify-content: space-around;
   }
 
-  .gewerke-container {
+  div.gewerke-container {
     gap: 4vh;
   }
 
-  .gewerke-container .gewerke:nth-child(-n + 3) {
+ div.gewerke-container .gewerke:nth-child(-n + 3) {
     margin-top: 0;
   }
 }
@@ -580,7 +633,8 @@ header li a {
     margin-left: 2vh;
   }
 }
-footer {
+
+#impressum{
   background-color: rgb(0, 184, 225);
   color: white;
   margin: 0;
@@ -594,7 +648,7 @@ footer {
   text-align: start;
 }
 
-.footers-content {
+#impressum .footers-content {
   margin-top: 4vh;
   margin-bottom: 0;
   display: flex;
@@ -603,32 +657,34 @@ footer {
   font-size: clamp(0.8rem, 3vw, 1.125rem);
 }
 
-.footers-content-content {
-  line-height: 0.5rem;
+footer#impressum div.footers-content-content {
+  line-height: 1rem;
 }
-footer h4 {
-  margin-bottom: 0.1rem;
+
+footer#impressum .footers-content h4 {
+  margin-bottom: 0.3rem;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
-footer p {
-  margin-bottom: 0.5rem;
+footer#impressum .footers-content .footers-content-content p {
+  margin-bottom: 1rem;
 }
 
-footer a {
-  text-decoration: none;
-  color: white;
+footer#impressum .footers-content .footers-content-content a {
+  text-decoration: none ;
+  color: white ;
 }
+
 
 @media (max-width: 768px) {
-  footer {
+  footer#impressum {
     height: auto;
     display: flex;
     flex-direction: column;
     padding-bottom: 4vh; /* Fügt einen unteren Padding zum Footer hinzu */
   }
 
-  .footers-content {
+  footer#impressum .footers-content {
     width: 100%;
     margin-top: 1vh; /* Reduziere den oberen Abstand, um die Elemente näher zusammenzubringen */
     margin-bottom: 1vh; /* Halte den unteren Abstand klein, um die Elemente eng zu halten */
@@ -636,7 +692,7 @@ footer a {
 
   }
   
-  .footers-content-content {
+  footer#impressum .footers-content .footers-content-content {
     width: 100%;
     line-height: 0.1rem;
     display: flex;

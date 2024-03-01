@@ -1,12 +1,11 @@
-
 initSlideIndex('picture-container1');
   initSlideIndex('picture-container2');
 
 
 function initSlideIndex(containerId) {
   let container = document.getElementById(containerId);
-  container.dataset.slideIndex = 1;
-  showDivs(1, containerId);
+  container.dataset.slideIndex = 1; // Speichert den Index im data-slide-index Attribut des Containers
+  showDivs(1, containerId); // Zeigt das erste Bild im Container an
 }
 
 function plusDivs(n, containerId) {
@@ -39,5 +38,3 @@ window.addEventListener("scroll", (event) => {
     document.querySelector(".header").classList.remove("shadow");
   }
 });
-
-
