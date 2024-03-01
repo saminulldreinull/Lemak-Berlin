@@ -1,12 +1,7 @@
-window.onload = () => {
 
-  
-  // Scroll-Event-Listener
-
-  // Initialisiere slideIndex für jeden Container
   initSlideIndex('picture-container1');
   initSlideIndex('picture-container2');
-}
+
 
 function initSlideIndex(containerId) {
   let container = document.getElementById(containerId);
