@@ -5,8 +5,8 @@ initSlideIndex('picture-container1');
 
 function initSlideIndex(containerId) {
   let container = document.getElementById(containerId);
-  container.dataset.slideIndex = 1; // Speichert den Index im data-slide-index Attribut des Containers
-  showDivs(1, containerId); // Zeigt das erste Bild im Container an
+  container.dataset.slideIndex = 1;
+  showDivs(1, containerId);
 }
 
 function plusDivs(n, containerId) {
