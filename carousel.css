@@ -1,0 +1,120 @@
+/* Allgemeine Stile */
+html,
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-weight: 200;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.div1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+}
+
+.picture-container {
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+    min-height: 16px + 1vw;
+    align-items: stretch;
+}
+
+.carousel-item {
+    height: 80vh;
+}
+
+.carousel-inner {
+    display: flex;
+    flex-grow: 1;
+
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+
+.footer {
+    height: 13%;
+    flex-shrink: 0;
+    border: 1px solid black;
+}
+
+.footer h3 {
+    font-size: clamp(2vw, 2rem, 5vw);
+    color: #000; /* Stellt sicher, dass die Schriftfarbe kontrastreich genug ist */
+    padding: 20px; /* Etwas Platz um den Text */
+    margin: 0; /* Entfernt jeglichen Standardabstand */
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    line-height: 50px;
+    line-height: 1.2;
+  }
+
+.carousel-control-prev,
+.carousel-control-next {
+  
+    top: 50%; /* Zentriert die Buttons vertikal */
+    transform: translateY(-50%); /* Verschiebt die Buttons zurück, um eine exakte Zentrierung zu erreichen */
+}
+
+.carousel-control-prev {
+    left: 0; /* Positioniert den 'Vorheriges'-Button am linken Rand */
+}
+
+.carousel-control-next {
+    right: 0; /* Positioniert den 'Nächstes'-Button am rechten Rand */
+}
+
+
+@media (max-width: 768px) {
+    .div1 {
+        gap: 2vh;
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: column;
+        gap: 0; /* Kein Abstand zwischen den Karussells */
+    }
+ 
+    .picture-container {
+        width: 100%; /* Stellt sicher, dass der Container die volle Breite ausnutzt */
+        padding-top: 0; /* Entfernt den oberen Abstand, falls vorhanden */
+        margin-top: 0; /* Entfernt den oberen Rand, falls vorhanden */
+    }
+  
+
+    .carousel-item {
+        width: 100%;
+         height:auto !important; 
+    }
+
+    .carousel-item img {
+         width: auto;
+         height: 45vh;
+        max-height: 50vh; 
+     
+    }  
+
+ 
+    .footer {
+        height: auto; /* Höhe automatisch anpassen */
+        font-size: 3vw; /* Textgröße relativ zur Bildschirmbreite */
+    }
+}
