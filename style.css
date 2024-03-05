@@ -218,7 +218,6 @@ header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
   right: 0; /* Positioniert den 'Nächstes'-Button am rechten Rand */
 }
 
-
 @media (min-width: 1024px) {
   .carousel-item img:hover {
     transform: scale(1.1);
@@ -234,7 +233,9 @@ header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
   }
 }
 
-
+button:hover {
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .div1 {
       gap: 2vh;
@@ -568,9 +569,6 @@ div.gewerke-container div.gewerke h4.heading {
     width: auto;
     padding-top: 0;
     margin-top: 0;
-  }
-  .picture-container {
-    background-color: red;
   }
   .contact-information {
     padding-left: 0;
