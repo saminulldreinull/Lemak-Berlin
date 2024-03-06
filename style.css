@@ -391,7 +391,7 @@ div.gewerke-container div.gewerke {
   background-color: white;
   border-radius: 5px;
   width: 25.6%; /* Beibehalten der Breite */
-  height: 40vh; /* Angepasste Höhe, abhängig von Ihren Bedürfnissen */
+  height: 35vh; /* Angepasste Höhe, abhängig von Ihren Bedürfnissen */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Verteilt den Inhalt gleichmäßig im Container */
@@ -422,7 +422,7 @@ div.gewerke-container div.gewerke h4.heading {
 
 .gewerke-container .gewerke:nth-child(3),
 .gewerke-container .gewerke:nth-child(5) {
-  height: 45vh;
+  min-height: 40vh;
 }
 
 @media (max-width: 768px) {
