@@ -27,7 +27,6 @@ body {
 
 /*------header------*/
 
-
 .shadow {
   -webkit-box-shadow: 0 14px 12px -6px grey;
   -moz-box-shadow: 0 14px 12px -6px grey;
@@ -70,8 +69,8 @@ header.header .nav-menu .nav-item .nav-link {
 }
 
 html body header#heda > nav.navbar {
-  display: flex!important;
-  align-items: center!important;
+  display: flex;
+  align-items: center;
   margin-top: 0.5%;
   padding-left: 5vh;
 }
@@ -82,9 +81,7 @@ header#heda nav.navbar ul.nav-menu {
   padding-right: 4vh;
 }
 
-
-
-header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
+header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover {
   color: black;
   transition: 0.7s ease;
 }
@@ -144,7 +141,7 @@ header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
 /*----header-end----*/
 
 .div1 {
-  background-color: rgb(243,243,243);
+  background-color: rgb(243, 243, 243);
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -163,7 +160,7 @@ header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
   height: 55%;
   width: 48%;
   min-width: 16px + 1vw;
-  align-items: stretch;
+  padding-bottom: 0;
 }
 
 .carousel-item {
@@ -173,7 +170,6 @@ header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
 .carousel-inner {
   display: flex;
   flex-grow: 1;
-
 }
 
 .carousel-item img {
@@ -184,28 +180,26 @@ header.header nav.navbar ul.nav-menu li.nav-item a.nav-link:hover  {
   transition: transform 0.8s ease-in-out;
 }
 
-
-
 .footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   height: 20%;
-  background-color: white!important;
+  background-color: white !important;
   flex-shrink: 0;
 }
 
 .footer h3 {
   font-size: clamp(2vw, 2rem, 5vw);
   color: #000; /* Stellt sicher, dass die Schriftfarbe kontrastreich genug ist */
-  padding: 20px; /* Etwas Platz um den Text */
+  padding-left: 1.25rem; /* Etwas Platz um den Text */
   margin: 0; /* Entfernt jeglichen Standardabstand */
   font-weight: 300;
   letter-spacing: 0.06em;
-  line-height: 50px;
-  line-height: 1.2;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-
   top: 50%; /* Zentriert die Buttons vertikal */
   transform: translateY(-50%); /* Verschiebt die Buttons zurück, um eine exakte Zentrierung zu erreichen */
 }
@@ -237,38 +231,50 @@ button:hover {
   cursor: pointer;
 }
 @media (max-width: 768px) {
+  #carouselExampleIndicators1 {
+    height: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
   .div1 {
-      gap: 2vh;
-      margin-left: 0;
-      margin-right: 0;
-      flex-direction: column;
-      gap: 0; /* Kein Abstand zwischen den Karussells */
+    gap: 2vh;
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: column;
+    height: auto;/*gives the margin-bottom place to be*/
+    gap: 0; /* Kein Abstand zwischen den Karussells */
+  }
+
+  .carousel-indicators {
+    height: auto;
+    width: auto;
   }
 
   .picture-container {
-      width: 100%; /* Stellt sicher, dass der Container die volle Breite ausnutzt */
-      padding-top: 0; /* Entfernt den oberen Abstand, falls vorhanden */
-      margin-top: 0; /* Entfernt den oberen Rand, falls vorhanden */
-  }
-
-
-  .carousel-item {
-      width: 100%;
-       height:auto !important; 
+    gap: 0;
+    height: auto;
+    width: 100%; /* Stellt sicher, dass der Container die volle Breite ausnutzt */
+    padding: 0; /* Entfernt den oberen Abstand, falls vorhanden */
+    margin: 0;
   }
 
   .carousel-item img {
-       width: auto;
-       height: 45vh;
-      max-height: 50vh; 
-   
-  }  
-
-
-  .footer {
-      height: auto; /* Höhe automatisch anpassen */
-      font-size: 3vw; /* Textgröße relativ zur Bildschirmbreite */
+    width: auto;
+    height: 45vh;
+    max-height: 50vh;
   }
+  .carousel-item {
+    height:auto; /* Statt eines festen 'vh'-Werts */
+  }
+
+  #carouselExampleIndicators1, .footer, .carousel-inner, .carousel-item.active {
+height: auto;
+  }
+.footer {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 }
 
 .about-container {
@@ -295,7 +301,7 @@ button:hover {
 
 .about-us {
   margin-top: 0.5rem;
-  font-size: clamp(0.95rem, 1.2vw, 2rem);
+  font-size: clamp(0.95rem, 1.2vw, 1.5rem);
   color: rgb(138, 138, 138);
   line-height: clamp(1rem, 1, 1.5rem);
   /* Keine zusätzlichen Stile benötigt, da die Positionierung durch den .gewerke-Container gesteuert wird */
@@ -333,7 +339,7 @@ button:hover {
 }
 
 .service-introduction {
-  height: 50vh;
+  height: 55vh;
   color: white;
   background-color: rgb(0, 184, 225);
   display: flex;
@@ -431,7 +437,7 @@ div.gewerke-container div.gewerke h4.heading {
     gap: 4vh;
   }
 
- div.gewerke-container .gewerke:nth-child(-n + 3) {
+  div.gewerke-container .gewerke:nth-child(-n + 3) {
     margin-top: 0;
   }
 }
@@ -504,7 +510,7 @@ div.gewerke-container div.gewerke h4.heading {
   justify-content: center;
   width: 100%;
   height: 70vh;
-  padding-top: 3vh;
+  padding-top: 1%;
   padding-bottom: 4vh;
   font-size: 1rem;
   text-align: center;
@@ -632,7 +638,7 @@ div.gewerke-container div.gewerke h4.heading {
   }
 }
 
-#impressum{
+#impressum {
   background-color: rgb(0, 184, 225);
   color: white;
   margin: 0;
@@ -669,10 +675,9 @@ footer#impressum .footers-content .footers-content-content p {
 }
 
 footer#impressum .footers-content .footers-content-content a {
-  text-decoration: none ;
-  color: white ;
+  text-decoration: none;
+  color: white;
 }
-
 
 @media (max-width: 768px) {
   footer#impressum {
@@ -687,9 +692,8 @@ footer#impressum .footers-content .footers-content-content a {
     margin-top: 1vh; /* Reduziere den oberen Abstand, um die Elemente näher zusammenzubringen */
     margin-bottom: 1vh; /* Halte den unteren Abstand klein, um die Elemente eng zu halten */
     align-items: center;
-
   }
-  
+
   footer#impressum .footers-content .footers-content-content {
     width: 100%;
     line-height: 0.1rem;
@@ -698,5 +702,4 @@ footer#impressum .footers-content .footers-content-content a {
     justify-content: center;
     align-items: center;
   }
-  
 }
