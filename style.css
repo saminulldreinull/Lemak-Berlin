@@ -55,7 +55,10 @@ header {
 .nav-branding span {
   padding-left: 0.5rem;
   font-size: clamp(0.75rem, 1.5vw, 1rem);
-  
+}
+
+body.open-nav-branding {
+  overflow: hidden;
 }
 
 .nav-menu {
