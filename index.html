@@ -14,27 +14,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
 <link href="style.css" rel="stylesheet" />
 </head>
   
 <body>
-  <header class="header" id = "heda">
-    <a href="#" class="nav-branding">LEMAK BAU <span> GmbH</span></a>
-    <nav class="navbar">
 
-      <ul class="nav-menu">
-        <li class="nav-item"><a class="nav-link" href="#about">ÜBER UNS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#service-introduction">LEISTUNGEN</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">KONTAKT</a></li>
-        <li class="nav-item"><a class="nav-link" href="#impressum">IMPRESSUM</a></li>
-      </ul>
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+  <header>
+    <a href="#" class="nav-branding">LEMAK BAU<span>GmbH</span></a>
+    <nav class = "nav-menu">
+        <ul class='nav-bar'>
+            <input type='checkbox' id='check' />
+            <span class="menu">
+              <li class="nav-item"><a class="nav-link" href="#about">ÜBER UNS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#service-introduction">LEISTUNGEN</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">KONTAKT</a></li>
+              <li class="nav-item"><a class="nav-link" href="#impressum">IMPRESSUM</a></li>
+
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </span>
+            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+        </ul>
     </nav>
-  </header>
+    </header>
 
   <div class="div1">
     <!-- erstes Karussell -->
