@@ -301,7 +301,7 @@ height: auto;
 
 .about-us {
   margin-top: 0.5rem;
-  font-size: clamp(0.95rem, 1.2vw, 1.4rem);
+  font-size: clamp(0.95rem, 1.15vw, 1.4rem);
   color: rgb(138, 138, 138);
   line-height: clamp(1rem, 1, 1.5rem);
   /* Keine zusätzlichen Stile benötigt, da die Positionierung durch den .gewerke-Container gesteuert wird */
@@ -378,7 +378,7 @@ height: auto;
 div.gewerke-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 5vh; /* Reduzierter Abstand zwischen den Elementen */
+  gap: 3vh; /* Reduzierter Abstand zwischen den Elementen */
   background-color: rgb(243, 243, 243);
   padding: 2vh; /* Fügt ein wenig Innenabstand hinzu */
   margin: 0;
@@ -391,12 +391,12 @@ div.gewerke-container div.gewerke {
   background-color: white;
   border-radius: 5px;
   width: 25.6%; /* Beibehalten der Breite */
-  height: 35vh; /* Angepasste Höhe, abhängig von Ihren Bedürfnissen */
+  height: 33vh; /* Angepasste Höhe, abhängig von Ihren Bedürfnissen */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Verteilt den Inhalt gleichmäßig im Container */
-  margin-bottom: 2vh; /* Fügt Abstand unten hinzu */
-  padding: 0.9375rem 1.5625rem; /* 15px vertikaler und 25px horizontaler Innenabstand */
+  margin-bottom: 0.8vh; /* Fügt Abstand unten hinzu */
+  padding: 1.1rem 1.5625rem; /* 15px vertikaler und 25px horizontaler Innenabstand */
 }
 
 div.gewerke-container div.gewerke:hover {
@@ -422,7 +422,7 @@ div.gewerke-container div.gewerke h4.heading {
 
 .gewerke-container .gewerke:nth-child(3),
 .gewerke-container .gewerke:nth-child(5) {
-  min-height: 40vh;
+  min-height: 38vh;
 }
 
 @media (max-width: 768px) {
@@ -509,7 +509,7 @@ div.gewerke-container div.gewerke h4.heading {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   padding-top: 1%;
   padding-bottom: 4vh;
   font-size: 1rem;
@@ -519,7 +519,7 @@ div.gewerke-container div.gewerke h4.heading {
 
 #contact h4 {
   font-size: 30px;
-  margin-top: 1rem;
+  margin-top: 0.1rem;
 }
 
 .contact-information {
