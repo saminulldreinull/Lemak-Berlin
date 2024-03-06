@@ -300,8 +300,7 @@ height: auto;
 }
 
 .about-us {
-  margin-top: 0.5rem;
-  font-size: clamp(0.95rem, 1.15vw, 1.4rem);
+  font-size: clamp(0.95rem, 1.1vw, 1.4rem);
   color: rgb(138, 138, 138);
   line-height: clamp(1rem, 1, 1.5rem);
   /* Keine zusätzlichen Stile benötigt, da die Positionierung durch den .gewerke-Container gesteuert wird */
@@ -396,7 +395,7 @@ div.gewerke-container div.gewerke {
   flex-direction: column;
   justify-content: space-between; /* Verteilt den Inhalt gleichmäßig im Container */
   margin-bottom: 0.8vh; /* Fügt Abstand unten hinzu */
-  padding: 1.1rem 1.5625rem; /* 15px vertikaler und 25px horizontaler Innenabstand */
+  padding: 1rem 1.5625rem; /* 15px vertikaler und 25px horizontaler Innenabstand */
 }
 
 div.gewerke-container div.gewerke:hover {
