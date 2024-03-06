@@ -6,5 +6,3 @@ window.addEventListener("scroll", (event) => {
       document.querySelector(".header").classList.remove("shadow");
     }
   });
-
-  
