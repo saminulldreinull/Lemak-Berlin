@@ -301,7 +301,7 @@ height: auto;
 
 .about-us {
   margin-top: 0.5rem;
-  font-size: clamp(0.95rem, 1.2vw, 1.5rem);
+  font-size: clamp(0.95rem, 1.2vw, 1.4rem);
   color: rgb(138, 138, 138);
   line-height: clamp(1rem, 1, 1.5rem);
   /* Keine zusätzlichen Stile benötigt, da die Positionierung durch den .gewerke-Container gesteuert wird */
