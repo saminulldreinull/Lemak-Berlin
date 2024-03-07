@@ -17,4 +17,13 @@ window.onload = () => {
       closeMenu.click();  // Ruft den Klick-Event-Handler für den Schließen-Button auf
     });
   });
+
+  window.addEventListener("scroll", (event) => {
+    let scroll = this.scrollY;
+    if (scroll > 10) {
+      document.querySelector("header").classList.add("shadow");
+    } else {
+      document.querySelector("header").classList.remove("shadow");
+    }
+  });
 };
