@@ -386,7 +386,7 @@ div.gewerke-container {
   justify-content: center;
 }
 
-div.gewerke-container div.gewerke {
+.gewerke-link {
   justify-content: flex-end;
   overflow: hidden;
   background-color: white;
@@ -399,7 +399,7 @@ div.gewerke-container div.gewerke {
   padding: 1rem 1.5625rem; /* 15px vertikaler und 25px horizontaler Innenabstand */
 }
 
-div.gewerke-container div.gewerke:hover {
+div.gewerke-container .gewerke-link:hover {
   color: white;
   background-color: rgb(0, 184, 225);
   cursor: pointer;
@@ -408,26 +408,28 @@ div.gewerke-container div.gewerke:hover {
     0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.gewerke:hover .about-us {
+
+
+.gewerke-link:hover .about-us,.gewerke-link:hover .heading {
   color: white;
 }
-
-.gewerke-container .gewerke:nth-child(-n + 3) {
+.gewerke-link:nth-child(-n + 3) {
   margin-top: 10vh;
 }
 
 div.gewerke-container div.gewerke h4.heading {
   font-size: clamp(1.5rem, 1vh, 1rem);
   margin-bottom: 0.3rem;
+  
 }
 
-.gewerke-container .gewerke:nth-child(3),
-.gewerke-container .gewerke:nth-child(5) {
+.gewerke-container .gewerke-link:nth-child(3),
+.gewerke-container .gewerke-link:nth-child(5) {
   min-height: 36vh;
 }
 
 @media (max-width: 768px) {
-  div.gewerke-container div.gewerke {
+  div.gewerke-container a.gewerke-link {
     width: 100%;
     margin-bottom: 0;
     height: 35vh;
@@ -438,7 +440,7 @@ div.gewerke-container div.gewerke h4.heading {
     gap: 4vh;
   }
 
-  div.gewerke-container .gewerke:nth-child(-n + 3) {
+  div.gewerke-container .gewerke-link:nth-child(-n + 3) {
     margin-top: 0;
   }
 }
