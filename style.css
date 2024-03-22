@@ -390,10 +390,9 @@ div.gewerke-container {
   flex-wrap: wrap;
   gap: 3vh; /* Reduzierter Abstand zwischen den Elementen */
   background-color: rgb(243, 243, 243);
-  padding: 2vh; /* Fügt ein wenig Innenabstand hinzu */
-  margin: 0;
-  padding-top: 2vh;
+
   justify-content: center;
+  align-items: flex-start;
 }
 
 .gewerke-link {
@@ -402,7 +401,7 @@ div.gewerke-container {
   background-color: white;
   border-radius: 5px;
   width: 22.6%; /* Beibehalten der Breite */
-  height: 33vh; /* Angepasste Höhe, abhängig von Ihren Bedürfnissen */
+  min-height: clamp(36vh, 38vh, 45vh); /* Angepasst */
   display: flex;
   flex-direction: column;
   margin-bottom: 0.8vh; /* Fügt Abstand unten hinzu */
